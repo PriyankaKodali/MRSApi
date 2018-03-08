@@ -1,0 +1,492 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MaxMRS.BundleConfig" Collapsed="true">
+    <Position X="17.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\BundleConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.FilterConfig" Collapsed="true">
+    <Position X="17.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\FilterConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.ApplicationUserManager">
+    <Position X="22.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\IdentityConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.RouteConfig">
+    <Position X="20.75" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\RouteConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Startup" Collapsed="true">
+    <Position X="15.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAEAgIAAAAAAAAA=</HashCode>
+      <FileName>App_Start\Startup.Auth.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.WebApiConfig" Collapsed="true">
+    <Position X="13.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\WebApiConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.WebApiApplication" Collapsed="true">
+    <Position X="12" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Global.asax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Areas.HelpPage.ApiDescriptionExtensions" Collapsed="true">
+    <Position X="15.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Areas\HelpPage\ApiDescriptionExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Areas.HelpPage.HelpPageConfig">
+    <Position X="24.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\App_Start\HelpPageConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Areas.HelpPage.HelpPageAreaRegistration">
+    <Position X="22.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\HelpPageAreaRegistration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Areas.HelpPage.HelpPageConfigurationExtensions" Collapsed="true">
+    <Position X="12" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAABAICACACEAACGSCAAAADABAAAEMAAAAAIEA=</HashCode>
+      <FileName>Areas\HelpPage\HelpPageConfigurationExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Areas.HelpPage.HelpPageSampleGenerator" Collapsed="true">
+    <Position X="13.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAYAARQAQAAEAJgAAAQAAgAAEAgFAAAAABCAAAI=</HashCode>
+      <FileName>Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Areas.HelpPage.HelpPageSampleKey" Collapsed="true">
+    <Position X="15.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAABAAAgAgAAAAAAAAAAAAICQAAAEAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Areas.HelpPage.ImageSample">
+    <Position X="19" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgAAAAAAAAAAAAIAAAAIAAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\SampleGeneration\ImageSample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Areas.HelpPage.InvalidSample">
+    <Position X="20.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAEgAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\SampleGeneration\InvalidSample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Areas.HelpPage.ObjectGenerator">
+    <Position X="24.5" Y="5.5" Width="1.5" />
+    <NestedTypes>
+      <Class Name="MaxMRS.Areas.HelpPage.ObjectGenerator.SimpleTypeObjectGenerator" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Areas\HelpPage\SampleGeneration\ObjectGenerator.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAABDAoAAAAAACAEAICAAAYAAACAAAAAAgCAgAAAAIA=</HashCode>
+      <FileName>Areas\HelpPage\SampleGeneration\ObjectGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Areas.HelpPage.TextSample">
+    <Position X="19" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgAAAAAAAAAAAAIAAAAAACAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\SampleGeneration\TextSample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Areas.HelpPage.XmlDocumentationProvider" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QIEAAAAIBAEAQAAABIAAAAAAAAAAAAAAAAAAAAAAAkg=</HashCode>
+      <FileName>Areas\HelpPage\XmlDocumentationProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MaxMRS.Areas.HelpPage.Controllers.HelpController">
+    <Position X="19" Y="3" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAABAABAAAAAAAAAAAAAAAAAAAAAAAgAEAAAAgAAA=</HashCode>
+      <FileName>Areas\HelpPage\Controllers\HelpController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Areas.HelpPage.ModelDescriptions.CollectionModelDescription" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Areas.HelpPage.ModelDescriptions.ComplexTypeModelDescription" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Areas.HelpPage.ModelDescriptions.DictionaryModelDescription" Collapsed="true">
+    <Position X="9.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Areas.HelpPage.ModelDescriptions.EnumTypeModelDescription" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Areas.HelpPage.ModelDescriptions.EnumValueDescription">
+    <Position X="24.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Areas.HelpPage.ModelDescriptions.KeyValuePairModelDescription" Collapsed="true">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Areas.HelpPage.ModelDescriptions.ModelDescription" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\ModelDescriptions\ModelDescription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator">
+    <Position X="19" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAGQBAAJAABAAACBAgAAAAASBAAAAAAAAAEAACAQAAA=</HashCode>
+      <FileName>Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Areas.HelpPage.ModelDescriptions.ModelNameAttribute">
+    <Position X="20.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Areas.HelpPage.ModelDescriptions.ModelNameHelper">
+    <Position X="22.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Areas.HelpPage.ModelDescriptions.ParameterAnnotation" Collapsed="true">
+    <Position X="12" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Areas.HelpPage.ModelDescriptions.ParameterDescription" Collapsed="true">
+    <Position X="13.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAQAQAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\ModelDescriptions\ParameterDescription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Areas.HelpPage.ModelDescriptions.SimpleTypeModelDescription" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Areas.HelpPage.Models.HelpPageApiModel">
+    <Position X="20.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAGBAAAAAAAAAAAAAgAAAAAAAUBAAAAAQAQAg=</HashCode>
+      <FileName>Areas\HelpPage\Models\HelpPageApiModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Controllers.AccountController" Collapsed="true">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAFACAACAAgQAAEAARAgIAABABEBAAAAAAgAAAAQA=</HashCode>
+      <FileName>Controllers\AccountController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Controllers.Error" Collapsed="true">
+    <Position X="12" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\Error.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Controllers.HomeController" Collapsed="true">
+    <Position X="17.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Controllers.JobsController">
+    <Position X="27" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAEAAQAAAABAAAAAAAACIAAAAAAAACAAAA=</HashCode>
+      <FileName>Controllers\JobsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Controllers.ValuesController">
+    <Position X="24.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAACAEAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Controllers\ValuesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Models.AddExternalLoginBindingModel" Collapsed="true">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\AccountBindingModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Models.ChangePasswordBindingModel">
+    <Position X="22.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Models\AccountBindingModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Models.RegisterBindingModel" Collapsed="true">
+    <Position X="15.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAQAAAAAAAAAAAAACAAAAAAAAIAA=</HashCode>
+      <FileName>Models\AccountBindingModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Models.RegisterExternalBindingModel" Collapsed="true">
+    <Position X="17.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\AccountBindingModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Models.RemoveLoginBindingModel">
+    <Position X="19" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAA=</HashCode>
+      <FileName>Models\AccountBindingModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Models.SetPasswordBindingModel">
+    <Position X="22.5" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Models\AccountBindingModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Models.ExternalLoginViewModel" Collapsed="true">
+    <Position X="15.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAACAAABAAAAAA=</HashCode>
+      <FileName>Models\AccountViewModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Models.ManageInfoViewModel" Collapsed="true">
+    <Position X="15.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAQAAAAAAAAAAAAAQAQAAAAAAA=</HashCode>
+      <FileName>Models\AccountViewModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Models.UserInfoViewModel">
+    <Position X="20.75" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAEAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Models\AccountViewModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Models.UserLoginInfoViewModel">
+    <Position X="22.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAA=</HashCode>
+      <FileName>Models\AccountViewModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Models.ApplicationUser">
+    <Position X="20.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\IdentityModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Models.ApplicationDbContext" Collapsed="true">
+    <Position X="17.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\IdentityModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Models.MaxMRSEntities" Collapsed="true">
+    <Position X="17.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EBIAEAAQAAApgAAAAEACwAAAEAAEQAAAAAAAEAAAAAE=</HashCode>
+      <FileName>Models\MaxMRSDb.Context.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Models.AspNetRole">
+    <Position X="24.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAQAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\AspNetRole.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Models.AspNetUser" Collapsed="true">
+    <Position X="12" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACCAAAAACAAoEAAAAAAQAABAAAAQAAIAQQAABAAAQE=</HashCode>
+      <FileName>Models\AspNetUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Models.AspNetUserClaim" Collapsed="true">
+    <Position X="13.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACACAAAAAAAAAAAAQAAAAAgAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Models\AspNetUserClaim.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Models.AspNetUserLogin" Collapsed="true">
+    <Position X="15.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAgAAAAAEAAAABAAAAAAAAA=</HashCode>
+      <FileName>Models\AspNetUserLogin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Models.C__MigrationHistory">
+    <Position X="19" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAACAAAAEAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Models\C__MigrationHistory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Models.ExceptionLog" Collapsed="true">
+    <Position X="13.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAgAAAAAgAAAAAAAAAAAAAAAAIAAAAQA=</HashCode>
+      <FileName>Models\ExceptionLog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Models.Job">
+    <Position X="22.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iAACAgAGAAAAEAAJAAAAgAAAAEAECAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Models\Job.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Models.JobWork" Collapsed="true">
+    <Position X="13.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAASAAAAAAAAAAAAAAAAAAAAAAAGAACgAAAEAAIAAAA=</HashCode>
+      <FileName>Models\JobWork.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Models.sp_helpdiagramdefinition_Result">
+    <Position X="24.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\sp_helpdiagramdefinition_Result.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Models.sp_helpdiagrams_Result" Collapsed="true">
+    <Position X="12" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAEAAiAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\sp_helpdiagrams_Result.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Models.sysdiagram" Collapsed="true">
+    <Position X="17.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAIAAAAAAAAAAAAAAAQAAAFAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\sysdiagram.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Providers.ApplicationOAuthProvider" Collapsed="true">
+    <Position X="19" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAACAAAAAAAAAAAAAEAAEIAAAAAAAAAAAgA=</HashCode>
+      <FileName>Providers\ApplicationOAuthProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.Results.ChallengeResult" BaseTypeListCollapsed="true">
+    <Position X="20.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Results\ChallengeResult.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MaxMRS.ViewModels.JobsViewModel" Collapsed="true">
+    <Position X="12" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQQCwAEAAgAAACIkAAAIAAAAAAACAAAAAAAAQAAABg=</HashCode>
+      <FileName>ViewModels\ViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxMRS.ViewModels.SplitJobsViewModel" Collapsed="true">
+    <Position X="13.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAQCAAAAAAACIAAAAIAAAAAAAAAAAAAAAAQAAABI=</HashCode>
+      <FileName>ViewModels\ViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="MaxMRS.Areas.HelpPage.ModelDescriptions.IModelDocumentationProvider" Collapsed="true">
+    <Position X="12" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="MaxMRS.Areas.HelpPage.SampleDirection" Collapsed="true">
+    <Position X="12" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\SampleGeneration\SampleDirection.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

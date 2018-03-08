@@ -1,0 +1,884 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MaxMRSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cities">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="State_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MaxMRS.dbo.Client_Vertical_Mapping' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Client_Vertical_Mapping">
+          <Key>
+            <PropertyRef Name="Client_VerticalId" />
+            <PropertyRef Name="Client_Id" />
+          </Key>
+          <Property Name="Client_VerticalId" Type="int" Nullable="false" />
+          <Property Name="Client_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ClientEmployees">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="20" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="PrimaryPhone" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="SecondaryPhone" Type="nvarchar" MaxLength="15" />
+          <Property Name="EmailId" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Client_Id" Type="int" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UpdatedTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="PrimaryPhone" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="SecondaryPhone" Type="nchar" MaxLength="10" />
+          <Property Name="EmailId" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="AddressLine1" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="AddressLine2" Type="nvarchar(max)" />
+          <Property Name="City_Id" Type="int" Nullable="false" />
+          <Property Name="State_Id" Type="int" Nullable="false" />
+          <Property Name="Country_Id" Type="int" Nullable="false" />
+          <Property Name="ZIP" Type="nvarchar" MaxLength="10" />
+          <Property Name="ClientType" Type="int" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="LastUpdatedBy" Type="datetime" />
+          <Property Name="PaymentAmount" Type="decimal" Precision="12" Scale="4" />
+          <Property Name="PaymentType" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ClientVerticals">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Countries">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Abbrevation" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Departments">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Designations">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmployeePayscales">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="EmployeeId" Type="int" Nullable="false" />
+          <Property Name="Gross" Type="int" />
+          <Property Name="BankName" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="BankAccNo" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="BankBranch" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="BankAccName" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="35" Nullable="false" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="20" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="35" Nullable="false" />
+          <Property Name="PrimaryPhone" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="SecondaryPhone" Type="nvarchar" MaxLength="15" />
+          <Property Name="Email" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="PhotoURL" Type="nvarchar" MaxLength="400" />
+          <Property Name="DOB" Type="date" Nullable="false" />
+          <Property Name="Aadhar" Type="nvarchar" MaxLength="12" />
+          <Property Name="PAN" Type="nvarchar" MaxLength="10" />
+          <Property Name="EmployeeNumber" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="AddressLine1" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="AddressLine2" Type="nvarchar" MaxLength="255" />
+          <Property Name="City_Id" Type="int" Nullable="false" />
+          <Property Name="State_Id" Type="int" Nullable="false" />
+          <Property Name="Country_Id" Type="int" Nullable="false" />
+          <Property Name="ZIP" Type="nvarchar" MaxLength="10" />
+          <Property Name="DOJ" Type="date" />
+          <Property Name="EmploymentType" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Manager_Id" Type="int" />
+          <Property Name="Designation_Id" Type="int" Nullable="false" />
+          <Property Name="Department_Id" Type="int" Nullable="false" />
+          <Property Name="Role_Id" Type="int" Nullable="false" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Jobs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="JobNumber" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Arrival Time" Type="datetime" />
+          <Property Name="Client_Id" Type="int" Nullable="false" />
+          <Property Name="TotalPages" Type="int" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="JobLevel" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="FinishTime" Type="datetime" />
+          <Property Name="JobType" Type="nvarchar" MaxLength="10" />
+          <Property Name="ClientFilePath" Type="nvarchar" MaxLength="400" />
+          <Property Name="MaxFilePath" Type="nvarchar" MaxLength="400" />
+          <Property Name="UploadedBy" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JobWorks">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="JobId" Type="int" Nullable="false" />
+          <Property Name="Employee_Id" Type="int" />
+          <Property Name="Client_Id" Type="int" Nullable="false" />
+          <Property Name="JobWorkLevel" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="LevelStatus" Type="nvarchar(max)" />
+          <Property Name="DownloadTime" Type="datetime" />
+          <Property Name="UploadTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="States">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Country_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Client_Vertical_Mapping_Clients">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+          <End Role="Client_Vertical_Mapping" Type="Self.Client_Vertical_Mapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Client_Vertical_Mapping">
+              <PropertyRef Name="Client_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Client_Vertical_Mapping_ClientVerticals">
+          <End Role="ClientVerticals" Type="Self.ClientVerticals" Multiplicity="1" />
+          <End Role="Client_Vertical_Mapping" Type="Self.Client_Vertical_Mapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClientVerticals">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Client_Vertical_Mapping">
+              <PropertyRef Name="Client_VerticalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Clients_Cities">
+          <End Role="Cities" Type="Self.Cities" Multiplicity="1" />
+          <End Role="Clients" Type="Self.Clients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cities">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Clients">
+              <PropertyRef Name="City_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeePayscales_Employees">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+          <End Role="EmployeePayscales" Type="Self.EmployeePayscales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EmployeePayscales">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_Cities">
+          <End Role="Cities" Type="Self.Cities" Multiplicity="1" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cities">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="City_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_Designations">
+          <End Role="Designations" Type="Self.Designations" Multiplicity="1" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Designations">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="Designation_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_Employees">
+          <End Role="Departments" Type="Self.Departments" Multiplicity="1" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departments">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="Department_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_Employees1">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+          <End Role="Employees1" Type="Self.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Employees1">
+              <PropertyRef Name="Manager_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobWorks_Jobs">
+          <End Role="Jobs" Type="Self.Jobs" Multiplicity="1" />
+          <End Role="JobWorks" Type="Self.JobWorks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jobs">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="JobWorks">
+              <PropertyRef Name="JobId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MaxMRSModelStoreContainer">
+          <EntitySet Name="Cities" EntityType="Self.Cities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClientEmployees" EntityType="Self.ClientEmployees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClientVerticals" EntityType="Self.ClientVerticals" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Countries" EntityType="Self.Countries" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Designations" EntityType="Self.Designations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeePayscales" EntityType="Self.EmployeePayscales" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Jobs" EntityType="Self.Jobs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JobWorks" EntityType="Self.JobWorks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="States" EntityType="Self.States" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Client_Vertical_Mapping" EntityType="Self.Client_Vertical_Mapping" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Client_Vertical_Mapping].[Client_VerticalId] AS [Client_VerticalId], 
+    [Client_Vertical_Mapping].[Client_Id] AS [Client_Id]
+    FROM [dbo].[Client_Vertical_Mapping] AS [Client_Vertical_Mapping]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Client_Vertical_Mapping_Clients" Association="Self.FK_Client_Vertical_Mapping_Clients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Client_Vertical_Mapping" EntitySet="Client_Vertical_Mapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Client_Vertical_Mapping_ClientVerticals" Association="Self.FK_Client_Vertical_Mapping_ClientVerticals">
+            <End Role="ClientVerticals" EntitySet="ClientVerticals" />
+            <End Role="Client_Vertical_Mapping" EntitySet="Client_Vertical_Mapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clients_Cities" Association="Self.FK_Clients_Cities">
+            <End Role="Cities" EntitySet="Cities" />
+            <End Role="Clients" EntitySet="Clients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeePayscales_Employees" Association="Self.FK_EmployeePayscales_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="EmployeePayscales" EntitySet="EmployeePayscales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_Cities" Association="Self.FK_Employees_Cities">
+            <End Role="Cities" EntitySet="Cities" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_Designations" Association="Self.FK_Employees_Designations">
+            <End Role="Designations" EntitySet="Designations" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_Employees" Association="Self.FK_Employees_Employees">
+            <End Role="Departments" EntitySet="Departments" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_Employees1" Association="Self.FK_Employees_Employees1">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Employees1" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobWorks_Jobs" Association="Self.FK_JobWorks_Jobs">
+            <End Role="Jobs" EntitySet="Jobs" />
+            <End Role="JobWorks" EntitySet="JobWorks" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MaxMRSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="State_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Clients" Relationship="Self.FK_Clients_Cities" FromRole="Cities" ToRole="Clients" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK_Employees_Cities" FromRole="Cities" ToRole="Employees" />
+        </EntityType>
+        <EntityType Name="ClientEmployee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PrimaryPhone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SecondaryPhone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="EmailId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Client_Id" Type="Int32" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UpdatedTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PrimaryPhone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="SecondaryPhone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="EmailId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AddressLine1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AddressLine2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="City_Id" Type="Int32" Nullable="false" />
+          <Property Name="State_Id" Type="Int32" Nullable="false" />
+          <Property Name="Country_Id" Type="Int32" Nullable="false" />
+          <Property Name="ZIP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ClientType" Type="Int32" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="LastUpdatedBy" Type="DateTime" Precision="3" />
+          <Property Name="PaymentAmount" Type="Decimal" Precision="12" Scale="4" />
+          <Property Name="PaymentType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="City" Relationship="Self.FK_Clients_Cities" FromRole="Clients" ToRole="Cities" />
+          <NavigationProperty Name="ClientVerticals" Relationship="Self.Client_Vertical_Mapping" FromRole="Clients" ToRole="ClientVerticals" />
+        </EntityType>
+        <EntityType Name="ClientVertical">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Clients" Relationship="Self.Client_Vertical_Mapping" FromRole="ClientVerticals" ToRole="Clients" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Abbrevation" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK_Employees_Employees" FromRole="Departments" ToRole="Employees" />
+        </EntityType>
+        <EntityType Name="Designation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK_Employees_Designations" FromRole="Designations" ToRole="Employees" />
+        </EntityType>
+        <EntityType Name="EmployeePayscale">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+          <Property Name="Gross" Type="Int32" />
+          <Property Name="BankName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BankAccNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BankBranch" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BankAccName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_EmployeePayscales_Employees" FromRole="EmployeePayscales" ToRole="Employees" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="35" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="35" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PrimaryPhone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SecondaryPhone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PhotoURL" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="DOB" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Aadhar" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="PAN" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AddressLine1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AddressLine2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="City_Id" Type="Int32" Nullable="false" />
+          <Property Name="State_Id" Type="Int32" Nullable="false" />
+          <Property Name="Country_Id" Type="Int32" Nullable="false" />
+          <Property Name="ZIP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DOJ" Type="DateTime" Precision="0" />
+          <Property Name="EmploymentType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Manager_Id" Type="Int32" />
+          <Property Name="Designation_Id" Type="Int32" Nullable="false" />
+          <Property Name="Department_Id" Type="Int32" Nullable="false" />
+          <Property Name="Role_Id" Type="Int32" Nullable="false" />
+          <Property Name="Gender" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="City" Relationship="Self.FK_Employees_Cities" FromRole="Employees" ToRole="Cities" />
+          <NavigationProperty Name="Department" Relationship="Self.FK_Employees_Employees" FromRole="Employees" ToRole="Departments" />
+          <NavigationProperty Name="Designation" Relationship="Self.FK_Employees_Designations" FromRole="Employees" ToRole="Designations" />
+          <NavigationProperty Name="EmployeePayscales" Relationship="Self.FK_EmployeePayscales_Employees" FromRole="Employees" ToRole="EmployeePayscales" />
+          <NavigationProperty Name="Employees1" Relationship="Self.FK_Employees_Employees1" FromRole="Employees" ToRole="Employees1" />
+          <NavigationProperty Name="Employee1" Relationship="Self.FK_Employees_Employees1" FromRole="Employees1" ToRole="Employees" />
+        </EntityType>
+        <EntityType Name="Job">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="JobNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Arrival_Time" Type="DateTime" Precision="3" />
+          <Property Name="Client_Id" Type="Int32" Nullable="false" />
+          <Property Name="TotalPages" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="JobLevel" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FinishTime" Type="DateTime" Precision="3" />
+          <Property Name="JobType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ClientFilePath" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="MaxFilePath" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="UploadedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="JobWorks" Relationship="Self.FK_JobWorks_Jobs" FromRole="Jobs" ToRole="JobWorks" />
+        </EntityType>
+        <EntityType Name="JobWork">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="JobId" Type="Int32" Nullable="false" />
+          <Property Name="Employee_Id" Type="Int32" />
+          <Property Name="Client_Id" Type="Int32" Nullable="false" />
+          <Property Name="JobWorkLevel" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LevelStatus" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DownloadTime" Type="DateTime" Precision="3" />
+          <Property Name="UploadTime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Job" Relationship="Self.FK_JobWorks_Jobs" FromRole="JobWorks" ToRole="Jobs" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Country_Id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Clients_Cities">
+          <End Role="Cities" Type="Self.City" Multiplicity="1" />
+          <End Role="Clients" Type="Self.Client" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cities">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Clients">
+              <PropertyRef Name="City_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_Cities">
+          <End Role="Cities" Type="Self.City" Multiplicity="1" />
+          <End Role="Employees" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cities">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="City_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_Employees">
+          <End Role="Departments" Type="Self.Department" Multiplicity="1" />
+          <End Role="Employees" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departments">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="Department_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_Designations">
+          <End Role="Designations" Type="Self.Designation" Multiplicity="1" />
+          <End Role="Employees" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Designations">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="Designation_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeePayscales_Employees">
+          <End Role="Employees" Type="Self.Employee" Multiplicity="1" />
+          <End Role="EmployeePayscales" Type="Self.EmployeePayscale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EmployeePayscales">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_Employees1">
+          <End Role="Employees" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Employees1" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Employees1">
+              <PropertyRef Name="Manager_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobWorks_Jobs">
+          <End Role="Jobs" Type="Self.Job" Multiplicity="1" />
+          <End Role="JobWorks" Type="Self.JobWork" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jobs">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="JobWorks">
+              <PropertyRef Name="JobId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Client_Vertical_Mapping">
+          <End Role="Clients" Type="Self.Client" Multiplicity="*" />
+          <End Role="ClientVerticals" Type="Self.ClientVertical" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="MaxMRSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cities" EntityType="Self.City" />
+          <EntitySet Name="ClientEmployees" EntityType="Self.ClientEmployee" />
+          <EntitySet Name="Clients" EntityType="Self.Client" />
+          <EntitySet Name="ClientVerticals" EntityType="Self.ClientVertical" />
+          <EntitySet Name="Countries" EntityType="Self.Country" />
+          <EntitySet Name="Departments" EntityType="Self.Department" />
+          <EntitySet Name="Designations" EntityType="Self.Designation" />
+          <EntitySet Name="EmployeePayscales" EntityType="Self.EmployeePayscale" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="Jobs" EntityType="Self.Job" />
+          <EntitySet Name="JobWorks" EntityType="Self.JobWork" />
+          <EntitySet Name="States" EntityType="Self.State" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <AssociationSet Name="FK_Clients_Cities" Association="Self.FK_Clients_Cities">
+            <End Role="Cities" EntitySet="Cities" />
+            <End Role="Clients" EntitySet="Clients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_Cities" Association="Self.FK_Employees_Cities">
+            <End Role="Cities" EntitySet="Cities" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_Employees" Association="Self.FK_Employees_Employees">
+            <End Role="Departments" EntitySet="Departments" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_Designations" Association="Self.FK_Employees_Designations">
+            <End Role="Designations" EntitySet="Designations" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeePayscales_Employees" Association="Self.FK_EmployeePayscales_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="EmployeePayscales" EntitySet="EmployeePayscales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_Employees1" Association="Self.FK_Employees_Employees1">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Employees1" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobWorks_Jobs" Association="Self.FK_JobWorks_Jobs">
+            <End Role="Jobs" EntitySet="Jobs" />
+            <End Role="JobWorks" EntitySet="JobWorks" />
+          </AssociationSet>
+          <AssociationSet Name="Client_Vertical_Mapping" Association="Self.Client_Vertical_Mapping">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="ClientVerticals" EntitySet="ClientVerticals" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MaxMRSModelStoreContainer" CdmEntityContainer="MaxMRSEntities">
+          <EntitySetMapping Name="Cities">
+            <EntityTypeMapping TypeName="MaxMRSModel.City">
+              <MappingFragment StoreEntitySet="Cities">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="State_Id" ColumnName="State_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClientEmployees">
+            <EntityTypeMapping TypeName="MaxMRSModel.ClientEmployee">
+              <MappingFragment StoreEntitySet="ClientEmployees">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="PrimaryPhone" ColumnName="PrimaryPhone" />
+                <ScalarProperty Name="SecondaryPhone" ColumnName="SecondaryPhone" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="Client_Id" ColumnName="Client_Id" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedTime" ColumnName="UpdatedTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clients">
+            <EntityTypeMapping TypeName="MaxMRSModel.Client">
+              <MappingFragment StoreEntitySet="Clients">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PrimaryPhone" ColumnName="PrimaryPhone" />
+                <ScalarProperty Name="SecondaryPhone" ColumnName="SecondaryPhone" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+                <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+                <ScalarProperty Name="City_Id" ColumnName="City_Id" />
+                <ScalarProperty Name="State_Id" ColumnName="State_Id" />
+                <ScalarProperty Name="Country_Id" ColumnName="Country_Id" />
+                <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+                <ScalarProperty Name="ClientType" ColumnName="ClientType" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
+                <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+                <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClientVerticals">
+            <EntityTypeMapping TypeName="MaxMRSModel.ClientVertical">
+              <MappingFragment StoreEntitySet="ClientVerticals">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Countries">
+            <EntityTypeMapping TypeName="MaxMRSModel.Country">
+              <MappingFragment StoreEntitySet="Countries">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Abbrevation" ColumnName="Abbrevation" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="MaxMRSModel.Department">
+              <MappingFragment StoreEntitySet="Departments">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Designations">
+            <EntityTypeMapping TypeName="MaxMRSModel.Designation">
+              <MappingFragment StoreEntitySet="Designations">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeePayscales">
+            <EntityTypeMapping TypeName="MaxMRSModel.EmployeePayscale">
+              <MappingFragment StoreEntitySet="EmployeePayscales">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="Gross" ColumnName="Gross" />
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
+                <ScalarProperty Name="BankAccNo" ColumnName="BankAccNo" />
+                <ScalarProperty Name="BankBranch" ColumnName="BankBranch" />
+                <ScalarProperty Name="BankAccName" ColumnName="BankAccName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="MaxMRSModel.Employee">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="PrimaryPhone" ColumnName="PrimaryPhone" />
+                <ScalarProperty Name="SecondaryPhone" ColumnName="SecondaryPhone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PhotoURL" ColumnName="PhotoURL" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="Aadhar" ColumnName="Aadhar" />
+                <ScalarProperty Name="PAN" ColumnName="PAN" />
+                <ScalarProperty Name="EmployeeNumber" ColumnName="EmployeeNumber" />
+                <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+                <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+                <ScalarProperty Name="City_Id" ColumnName="City_Id" />
+                <ScalarProperty Name="State_Id" ColumnName="State_Id" />
+                <ScalarProperty Name="Country_Id" ColumnName="Country_Id" />
+                <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+                <ScalarProperty Name="DOJ" ColumnName="DOJ" />
+                <ScalarProperty Name="EmploymentType" ColumnName="EmploymentType" />
+                <ScalarProperty Name="Manager_Id" ColumnName="Manager_Id" />
+                <ScalarProperty Name="Designation_Id" ColumnName="Designation_Id" />
+                <ScalarProperty Name="Department_Id" ColumnName="Department_Id" />
+                <ScalarProperty Name="Role_Id" ColumnName="Role_Id" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Jobs">
+            <EntityTypeMapping TypeName="MaxMRSModel.Job">
+              <MappingFragment StoreEntitySet="Jobs">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="JobNumber" ColumnName="JobNumber" />
+                <ScalarProperty Name="Arrival_Time" ColumnName="Arrival Time" />
+                <ScalarProperty Name="Client_Id" ColumnName="Client_Id" />
+                <ScalarProperty Name="TotalPages" ColumnName="TotalPages" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="JobLevel" ColumnName="JobLevel" />
+                <ScalarProperty Name="FinishTime" ColumnName="FinishTime" />
+                <ScalarProperty Name="JobType" ColumnName="JobType" />
+                <ScalarProperty Name="ClientFilePath" ColumnName="ClientFilePath" />
+                <ScalarProperty Name="MaxFilePath" ColumnName="MaxFilePath" />
+                <ScalarProperty Name="UploadedBy" ColumnName="UploadedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JobWorks">
+            <EntityTypeMapping TypeName="MaxMRSModel.JobWork">
+              <MappingFragment StoreEntitySet="JobWorks">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="JobId" ColumnName="JobId" />
+                <ScalarProperty Name="Employee_Id" ColumnName="Employee_Id" />
+                <ScalarProperty Name="Client_Id" ColumnName="Client_Id" />
+                <ScalarProperty Name="JobWorkLevel" ColumnName="JobWorkLevel" />
+                <ScalarProperty Name="LevelStatus" ColumnName="LevelStatus" />
+                <ScalarProperty Name="DownloadTime" ColumnName="DownloadTime" />
+                <ScalarProperty Name="UploadTime" ColumnName="UploadTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="States">
+            <EntityTypeMapping TypeName="MaxMRSModel.State">
+              <MappingFragment StoreEntitySet="States">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Country_Id" ColumnName="Country_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="MaxMRSModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Client_Vertical_Mapping" TypeName="MaxMRSModel.Client_Vertical_Mapping" StoreEntitySet="Client_Vertical_Mapping">
+            <EndProperty Name="Clients">
+              <ScalarProperty Name="Id" ColumnName="Client_Id" />
+            </EndProperty>
+            <EndProperty Name="ClientVerticals">
+              <ScalarProperty Name="Id" ColumnName="Client_VerticalId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
